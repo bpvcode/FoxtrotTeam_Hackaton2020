@@ -1,4 +1,4 @@
 package org.aguilerasTeam.shout.services;
 
-public class ProfessionalsServices {
+public class EventsServices {
 }
