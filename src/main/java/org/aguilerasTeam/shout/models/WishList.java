@@ -5,6 +5,10 @@ public class WishList {
     private Products[] wishList = new Products[3];
     private boolean isBought = false;
 
+    public WishList(Products[] wishList){
+        this.wishList = wishList;
+    }
+
     public Integer getId() {
         return id;
     }

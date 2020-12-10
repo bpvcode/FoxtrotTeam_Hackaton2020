@@ -4,10 +4,12 @@ import org.aguilerasTeam.shout.models.ONG;
 import org.aguilerasTeam.shout.models.Users;
 
 import java.util.List;
+import java.util.Set;
 
 public class MenuServices {
 
     private Users currentUser;
+    private Set<Users> registeredUsers;
     private UsersServices usersServices;
     private EventsServices eventsServices;
     private ONGServices ongServices;
@@ -17,7 +19,6 @@ public class MenuServices {
     public void setCurrentUser(Users loginUser) {
         currentUser= loginUser;
     }
-
 
     public void distributeCurrentUser(){
         usersServices.setCurrentUser(currentUser);
@@ -29,10 +30,6 @@ public class MenuServices {
     public void distributeONG(){
         productsServices.setOngList(ongServices.getOngList());
         eventsServices.setOngList(ongServices.getOngList());
-    }
-
-    public void distributeProducts(){
-        //eventsServices.setProductsList(productsServices.getProductsList());
     }
 
     public void distributeEvents(){
@@ -53,5 +50,9 @@ public class MenuServices {
 
     public void setProductsServices(ProductsServices productsServices) {
         this.productsServices = productsServices;
+    }
+
+    public void setRegisteredUsers(Set<Users> registeredUsers) {
+        this.registeredUsers = registeredUsers;
     }
 }

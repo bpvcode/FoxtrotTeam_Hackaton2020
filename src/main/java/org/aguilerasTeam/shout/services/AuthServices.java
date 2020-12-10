@@ -24,6 +24,7 @@ public class AuthServices {
         for(Users user : userSet) {
             if(user.getUsername().equals(username) && user.getPassword().equals(password)) {
                 menuServices.setCurrentUser(user);
+                menuServices.setRegisteredUsers(userSet);
                 return true;
             }
         }

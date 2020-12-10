@@ -1,9 +1,6 @@
 package org.aguilerasTeam.shout.services;
 
-import org.aguilerasTeam.shout.models.Events;
-import org.aguilerasTeam.shout.models.ONG;
-import org.aguilerasTeam.shout.models.Products;
-import org.aguilerasTeam.shout.models.Users;
+import org.aguilerasTeam.shout.models.*;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -18,16 +15,20 @@ public class ProductsServices {
 
     public void matchWishListToEvent(Integer id, Products[] products){
         for(Events event : eventsList) {
-            if(event.getMaxvalue()>= products[0].getTotalPrice() && event.getMaxvalue()>= products[1].getTotalPrice() && event.getMaxvalue()>= products[2].getTotalPrice()) {
+            if(event.getMaxvalue()>= products[0].getProductPrice() && event.getMaxvalue()>= products[1].getProductPrice() && event.getMaxvalue()>= products[2].getProductPrice()) {
                 currentUser.getWishList().get(id).setId(event.getId());
             }
         }
     }
 
+    public Products[] getWishList(Integer id){
+        return currentUser.getWishList().get(id).getWishList();
+    }
+
     public void addNewProduct(Products product1, Products product2, Products product3, Integer id){
         Products[] wishList = new Products[]{product1,product2,product3};
-        currentUser.getWishList().get(id).setWishList(wishList);
-
+        WishList realWishList = new WishList(wishList);
+        currentUser.getWishList().add(realWishList);
     }
 
     public void addProduct(Products products){

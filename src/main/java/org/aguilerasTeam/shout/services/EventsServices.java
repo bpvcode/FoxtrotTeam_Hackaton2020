@@ -5,6 +5,7 @@ import org.aguilerasTeam.shout.models.Events;
 import org.aguilerasTeam.shout.models.ONG;
 import org.aguilerasTeam.shout.models.Products;
 import org.aguilerasTeam.shout.models.Users;
+import org.h2.engine.User;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import java.util.Date;
@@ -19,7 +20,7 @@ public class EventsServices {
     private List<Products> productsList;
     private List<Events> eventsList;
 
-    public void creteNewEvent(String name, Integer maxvalue, String description, Date date, Integer id){
+    public void createNewEvent(String name, Integer maxvalue, String description, Date date, Integer id){
         Events event = new Events(name, maxvalue, description, date, id);
         event.getUserList().add(currentUser);
         currentUser.getEventsList().add(event);
@@ -35,27 +36,34 @@ public class EventsServices {
         }
     }
 
-    public void finishEvent(Events event){ //POR TESTAR
-        usersList = event.getUserList();
-        List<Users> giftedList = event.getUserList();
+    public void finishEvent(Integer id){
+        usersList = eventsList.get(id).getUserList();
+        int number = usersList.size();
+        Users[] user = new Users[number];
+        user = usersList.toArray(user);
         for(Users users : usersList){
-            int number = giftedList.size();
-            Users chosenOne = giftedList.get((int)(Math.random() * number));
-            if(users == chosenOne && number!=1){
+            Users chosenOne = null;
+            while(chosenOne==null){
+                number = (int)(Math.random() * usersList.size());
+                chosenOne = user[number];
+            }
+            if(users == chosenOne && number != 1){
                 while(users == chosenOne){
-                    chosenOne = giftedList.get((int)(Math.random() * number));
+                    number = (int)(Math.random() * usersList.size());
+                    chosenOne = user[number];
                 }
             }
-            users.getUsersList().put(chosenOne,event.getId());
-            giftedList.remove(chosenOne);
+            users.getUsersList().put(chosenOne,id);
+            user[number]=null;
         }
     }
 
-    public void makePayment(Integer amount, Integer index, Integer indexPresent){
-        if(amount <= currentUser.getAccount()) {
+    public void makePayment(Integer amount, Integer id, Integer indexPresent){
+        if(amount <= currentUser.getAccount() && !currentUser.getKey(currentUser.getUsersList(),id).getWishList().get(id).isBought()) {
             currentUser.setAccount(-amount);
-            currentUser.getKey(currentUser.getUsersList(),index).getWishList().get(index).getWishList()[indexPresent].getOng().addMoney(amount);
-            //productsServices.getProductsList();
+            int donation = eventsList.get(id).getMaxvalue()-amount;
+            currentUser.getKey(currentUser.getUsersList(),id).getWishList().get(id).getWishList()[indexPresent].getOng().addMoney(donation);
+            currentUser.getKey(currentUser.getUsersList(),id).getWishList().get(id).setBought(true);
         }
     }
 

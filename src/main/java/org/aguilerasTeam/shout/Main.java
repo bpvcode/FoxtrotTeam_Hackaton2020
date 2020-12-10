@@ -1,11 +1,10 @@
 package org.aguilerasTeam.shout;
 
 import org.aguilerasTeam.shout.models.Events;
+import org.aguilerasTeam.shout.models.ONG;
+import org.aguilerasTeam.shout.models.Products;
 import org.aguilerasTeam.shout.models.Users;
-import org.aguilerasTeam.shout.services.AuthServices;
-import org.aguilerasTeam.shout.services.EventsServices;
-import org.aguilerasTeam.shout.services.MenuServices;
-import org.aguilerasTeam.shout.services.UsersServices;
+import org.aguilerasTeam.shout.services.*;
 import org.h2.engine.User;
 
 import java.util.Date;
@@ -117,6 +116,53 @@ public class Main {
              ) {
             System.out.println(user.getFirstName());
         }*/
+        Date date = new Date();
+        Users user1 = new Users("bpvcode", "xxx", "Bruno", "Vilar", "bruno@gmail.com", 100);
+        Users user2 = new Users("nuriaFOfinha", "fofi", "Nuria", "Pinto", "nuria@gmail.com", 0);
+        Users user3 = new Users("asdggasd", "fasdgfi", "adfg", "Piadfg", "nfdga@gmail.com", 555);
+        AuthServices authServices = new AuthServices();
+        MenuServices menuServices = new MenuServices();
+        UsersServices usersServices = new UsersServices();
+        EventsServices eventsServices = new EventsServices();
+        ONGServices ongServices = new ONGServices();
+        ProductsServices productsServices = new ProductsServices();
+
+        authServices.setMenuServices(menuServices);
+
+        menuServices.setUsersServices(usersServices);
+        menuServices.setEventsServices(eventsServices);
+        menuServices.setOngServices(ongServices);
+        menuServices.setProductsServices(productsServices);
+
+        authServices.registUser(user1);
+        authServices.registUser(user2);
+        authServices.registUser(user3);
+        authServices.authenticateUser("bpvcode","xxx");
+        menuServices.distributeCurrentUser();
+
+        eventsServices.createNewEvent("BEBIANAS GONNA BEBIATE", 20, "Hackaton", date, 0);
+        eventsServices.addUser("BEBIANAS GONNA BEBIATE",user2);
+        eventsServices.addUser("BEBIANAS GONNA BEBIATE",user3);
+        menuServices.distributeEvents();
+
+        ONG ong1 = new ONG("bancoalimentar","917tiratirametemete@gmail.com");
+        ongServices.addNewOng(ong1);
+        menuServices.distributeONG();
+
+        Products pro1 = new Products("dildo", 10,eventsServices.getOngList().get(0));
+        Products pro2 = new Products("vibrador",25,eventsServices.getOngList().get(0));
+        Products pro3 = new Products("anal beads",15,eventsServices.getOngList().get(0));
+        productsServices.addProduct(pro1);
+        productsServices.addProduct(pro2);
+        productsServices.addProduct(pro3);
+        productsServices.addNewProduct(pro1,pro2,pro3,0);
+
+        eventsServices.finishEvent(0);
+
+        System.out.println(user2.getUsersList());
+        System.out.println(user2.getEventsList());
+        System.out.println(user1.getUsersList());
+        System.out.println(user1.getEventsList());
 
     }
 }

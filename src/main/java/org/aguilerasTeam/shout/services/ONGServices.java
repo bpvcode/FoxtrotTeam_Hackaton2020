@@ -13,6 +13,10 @@ public class ONGServices {
         ongList.add(ong);
     }
 
+    public void addNewOng(ONG ong){
+        ongList.add(ong);
+    }
+
     public List<ONG> getOngList() {
         return ongList;
     }
