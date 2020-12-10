@@ -7,16 +7,18 @@ import java.util.List;
 public class Events {
 
     private List<Users> userList = new LinkedList<>();
+    private Integer id;
     private String name;
     private Integer maxvalue;
     private String description;
     private Date date;
 
-    public Events(String name, Integer maxvalue, String description, Date date){
+    public Events(String name, Integer maxvalue, String description, Date date, Integer id){
         this.name = name;
         this.maxvalue = maxvalue;
         this.description = description;
         this.date = date;
+        this.id = id;
     }
 
 
@@ -62,5 +64,13 @@ public class Events {
 
     public void setDate(Date date) {
         this.date = date;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 }

@@ -1,8 +1,12 @@
 package org.aguilerasTeam.shout.models;
 
 
+import org.h2.engine.User;
+
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 public class Users {
 
@@ -12,11 +16,10 @@ public class Users {
     private String lastName;
     private String email;
     private Integer account;
-    private List<Products[]> listOfWishLists = new LinkedList<>();
-    private Products[] wishList = new Products[3];
+    private Map<Users,Integer> usersList = new HashMap<>();
+    private List<WishList> wishList = new LinkedList<>();
     private List<Events> eventsList = new LinkedList<>();
     private Integer moneyDonated;
-    private boolean isBought;
 
 
     public Users(String username, String password, String firstName, String lastName, String email, Integer account){
@@ -84,22 +87,6 @@ public class Users {
         this.password = password;
     }
 
-    public Products[] getWishList() {
-        return wishList;
-    }
-
-    public void setWishList(Products[] wishList) {
-        this.wishList = wishList;
-    }
-
-    public boolean isBought() {
-        return isBought;
-    }
-
-    public void setBought(boolean bought) {
-        isBought = bought;
-    }
-
     public List<Events> getEventsList() {
         return eventsList;
     }
@@ -116,19 +103,36 @@ public class Users {
         this.account += account;
     }
 
-    public List<Products[]> getListOfwhishLists() {
-        return listOfWishLists;
-    }
-
-    public void setListOfwhishLists(List<Products[]> listOfwhishLists) {
-        this.listOfWishLists = listOfwhishLists;
-    }
-
     public Integer getMoneyDonated() {
         return moneyDonated;
     }
 
     public void setMoneyDonated(Integer moneyDonated) {
         this.moneyDonated = moneyDonated;
+    }
+
+    public List<WishList> getWishList() {
+        return wishList;
+    }
+
+    public void setWishList(List<WishList> wishList) {
+        this.wishList = wishList;
+    }
+
+    public Map<Users,Integer> getUsersList() {
+        return usersList;
+    }
+
+    public void setUsersList(Map<Users,Integer> usersList) {
+        this.usersList = usersList;
+    }
+
+    public Users getKey(Map<Users, Integer> map, Integer value) {
+        for (Map.Entry<Users, Integer> entry : map.entrySet()) {
+            if (entry.getValue() == value) {
+                return entry.getKey();
+            }
+        }
+        return null;
     }
 }

@@ -24,25 +24,11 @@ public class AuthServices {
         for(Users user : userSet) {
             if(user.getUsername().equals(username) && user.getPassword().equals(password)) {
                 menuServices.setCurrentUser(user);
-                System.out.println("HELOOO ENTRASTE BRO");
                 return true;
             }
         }
-        System.out.println("AHHAHHAHAH");
         return false;
     }
-
-    /*public UsersServices getUsersServices() {
-        return usersServices;
-    }
-
-
-    //@Autowired
-    public void setUsersServices(UsersServices usersServices) {
-        this.usersServices = usersServices;
-    }
-
-     */
 
     //@Autowired
     public void setMenuServices(MenuServices menuServices) {

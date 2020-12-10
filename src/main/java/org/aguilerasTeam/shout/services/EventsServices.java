@@ -6,44 +6,55 @@ import org.aguilerasTeam.shout.models.ONG;
 import org.aguilerasTeam.shout.models.Products;
 import org.aguilerasTeam.shout.models.Users;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import java.util.Date;
 import java.util.List;
 
 public class EventsServices {
 
-    private ProductsServices productsServices;
     private ONGServices ongServices;
     private Users currentUser;
-    private UsersServices usersServices; //SETTAR NA MAIN
+    private List<Users> usersList;
     private List<ONG> ongList;
     private List<Products> productsList;
+    private List<Events> eventsList;
 
-    //private List<Events> eventsList = usersServices.getCurrentUser().getEventsList();
-
-    public void creteNewEvent(String name, Integer maxvalue, String description, Date date){
-        //CRIAR CONDIÇÂO DE NOME NAO IGUAL (FOR EACH)
-        Events event = new Events(name, maxvalue, description, date);
+    public void creteNewEvent(String name, Integer maxvalue, String description, Date date, Integer id){
+        Events event = new Events(name, maxvalue, description, date, id);
         event.getUserList().add(currentUser);
-        //eventsList.add(event);
         currentUser.getEventsList().add(event);
     }
 
     public void addUser(String name, Users user){ //POPULATE EVENT
-        List<Events> eventsList = currentUser.getEventsList();
         for(Events event : eventsList) {
             if(name.equals(event.getName())) {
                 event.addUser(user);
                 user.getEventsList().add(event);
-                System.out.println("ADICIONADO BROOOOO");
                 return;
             }
         }
-        System.out.println("AHHAHHAHAH");
     }
 
-    public void makePayment(Integer amount){
+    public void finishEvent(Events event){ //POR TESTAR
+        usersList = event.getUserList();
+        List<Users> giftedList = event.getUserList();
+        for(Users users : usersList){
+            int number = giftedList.size();
+            Users chosenOne = giftedList.get((int)(Math.random() * number));
+            if(users == chosenOne && number!=1){
+                while(users == chosenOne){
+                    chosenOne = giftedList.get((int)(Math.random() * number));
+                }
+            }
+            users.getUsersList().put(chosenOne,event.getId());
+            giftedList.remove(chosenOne);
+        }
+    }
+
+    public void makePayment(Integer amount, Integer index, Integer indexPresent){
         if(amount <= currentUser.getAccount()) {
             currentUser.setAccount(-amount);
+            currentUser.getKey(currentUser.getUsersList(),index).getWishList().get(index).getWishList()[indexPresent].getOng().addMoney(amount);
             //productsServices.getProductsList();
         }
     }
@@ -52,25 +63,13 @@ public class EventsServices {
         return currentUser.getEventsList();
     }
 
-
-    public UsersServices getUsersServices() {
-        return usersServices;
-    }
-
-    public void setUsersServices(UsersServices usersServices) {
-        this.usersServices = usersServices;
-    }
-
     public Users getCurrentUser() {
         return currentUser;
     }
 
     public void setCurrentUser(Users currentUser) {
         this.currentUser = currentUser;
-    }
-
-    public void setProductsServices(ProductsServices productsServices) {
-        this.productsServices = productsServices;
+        eventsList = currentUser.getEventsList();
     }
 
     public ONGServices getOngServices() {
@@ -95,5 +94,9 @@ public class EventsServices {
 
     public void setProductsList(List<Products> productsList) {
         this.productsList = productsList;
+    }
+
+    public void setEventsList(List<Events> eventsList) {
+        this.eventsList = eventsList;
     }
 }

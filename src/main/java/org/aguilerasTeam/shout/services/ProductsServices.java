@@ -13,31 +13,25 @@ public class ProductsServices {
 
     private Users currentUser;
     private List<ONG> ongList;
-    private List<Products> productsList = new LinkedList<>();
-    private List<Products[]> listWishLists;
     private List<Events> eventsList;
+    private List<Products> productsList = new LinkedList<>();
 
-    public void matchWishListToEvent(String eventName){
+    public void matchWishListToEvent(Integer id, Products[] products){
         for(Events event : eventsList) {
-            if(eventName.equals(event.getName())) {
-
+            if(event.getMaxvalue()>= products[0].getTotalPrice() && event.getMaxvalue()>= products[1].getTotalPrice() && event.getMaxvalue()>= products[2].getTotalPrice()) {
+                currentUser.getWishList().get(id).setId(event.getId());
             }
         }
     }
 
-    public void addNewProduct(Products product1, Products product2, Products product3){
+    public void addNewProduct(Products product1, Products product2, Products product3, Integer id){
         Products[] wishList = new Products[]{product1,product2,product3};
-        currentUser.getListOfwhishLists().add(wishList);
+        currentUser.getWishList().get(id).setWishList(wishList);
 
     }
 
-
-    public List<Products> getProductsList() {
-        return productsList;
-    }
-
-    public void setProductsList(List<Products> productsList) {
-        this.productsList = productsList;
+    public void addProduct(Products products){
+        productsList.add(products);
     }
 
     public Users getCurrentUser() {
@@ -46,9 +40,8 @@ public class ProductsServices {
 
     public void setCurrentUser(Users currentUser) {
         this.currentUser = currentUser;
-        listWishLists = currentUser.getListOfwhishLists();
+        eventsList = currentUser.getEventsList();
     }
-
 
     public void setOngList(List<ONG> ongList) {
         this.ongList = ongList;
@@ -58,20 +51,19 @@ public class ProductsServices {
         return ongList;
     }
 
-
-    public List<Products[]> getListWishLists() {
-        return listWishLists;
-    }
-
-    public void setListWishLists(List<Products[]> listWishLists) {
-        this.listWishLists = listWishLists;
-    }
-
     public List<Events> getEventsList() {
         return eventsList;
     }
 
     public void setEventsList(List<Events> eventsList) {
         this.eventsList = eventsList;
+    }
+
+    public List<Products> getProductsList() {
+        return productsList;
+    }
+
+    public void setProductsList(List<Products> productsList) {
+        this.productsList = productsList;
     }
 }

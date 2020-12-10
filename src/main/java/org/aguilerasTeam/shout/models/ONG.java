@@ -33,4 +33,7 @@ public class ONG {
         return account;
     }
 
+    public void addMoney(Integer amount){
+        account += amount;
+    }
 }

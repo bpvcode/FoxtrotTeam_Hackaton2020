@@ -20,4 +20,8 @@ public class ONGServices {
     public void setOngList(List<ONG> ongList) {
         this.ongList = ongList;
     }
+
+    public Integer getSetOng(Integer id) {
+        return ongList.get(id).getAccount();
+    }
 }

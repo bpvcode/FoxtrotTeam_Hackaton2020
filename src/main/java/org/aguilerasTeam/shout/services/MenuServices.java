@@ -32,7 +32,7 @@ public class MenuServices {
     }
 
     public void distributeProducts(){
-        eventsServices.setProductsList(productsServices.getProductsList());
+        //eventsServices.setProductsList(productsServices.getProductsList());
     }
 
     public void distributeEvents(){

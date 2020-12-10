@@ -6,9 +6,12 @@ import org.aguilerasTeam.shout.services.AuthServices;
 import org.aguilerasTeam.shout.services.EventsServices;
 import org.aguilerasTeam.shout.services.MenuServices;
 import org.aguilerasTeam.shout.services.UsersServices;
+import org.h2.engine.User;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 
 public class Main {
@@ -61,7 +64,7 @@ public class Main {
          */
 
 
-        AuthServices authServices = new AuthServices();
+        /*AuthServices authServices = new AuthServices();
         MenuServices menuServices = new MenuServices();
         UsersServices usersServices = new UsersServices();
 
@@ -85,7 +88,7 @@ public class Main {
         System.out.println(usersServices.getCurrentUser().getAccount());
 
 
-        usersServices.getCurrentUser().getEventsList().add(new Events("OLA", 5,"hey",date));
+        usersServices.getCurrentUser().getEventsList().add(new Events("OLA", 5,"hey",date,1));
 
         EventsServices eventsServices = new EventsServices();
 
@@ -94,7 +97,7 @@ public class Main {
 
         System.out.println("EVENTS LIST"+usersServices.getCurrentUser().getEventsList().size());
 
-        eventsServices.creteNewEvent("BEBIANAS GONNA BEBIATE", 20, "Hackaton", date);
+        eventsServices.creteNewEvent("BEBIANAS GONNA BEBIATE", 20, "Hackaton", date, 0);
 
         System.out.println("EVENTS LIST"+usersServices.getCurrentUser().getEventsList().size());
 
@@ -113,8 +116,7 @@ public class Main {
         for (Users user : usersList
              ) {
             System.out.println(user.getFirstName());
-        }
-
+        }*/
 
     }
 }
