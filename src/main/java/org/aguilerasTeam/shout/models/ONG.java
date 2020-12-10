@@ -13,7 +13,6 @@ public class ONG {
     }
 
 
-
     public String getName() {
         return name;
     }

@@ -12,8 +12,10 @@ public class Users {
     private String lastName;
     private String email;
     private Integer account;
+    private List<Products[]> listOfWishLists = new LinkedList<>();
     private Products[] wishList = new Products[3];
     private List<Events> eventsList = new LinkedList<>();
+    private Integer moneyDonated;
     private boolean isBought;
 
 
@@ -24,24 +26,9 @@ public class Users {
         this.lastName = lastName;
         this.email = email;
         this.account = account;
+        moneyDonated = 0;
 
     }
-
-    public void addEvent(Events event){
-        eventsList.add(event);
-    }
-
-    public void createWhishList(Products[] wishList){
-        this.wishList = wishList;
-    }
-
-    public void buyGift(Integer amount){
-        if(amount<= account) {
-            account -= amount;
-            isBought = true;
-        }
-    }
-
 
     public String getUsername() {
         return username;
@@ -98,9 +85,6 @@ public class Users {
     }
 
     public Products[] getWishList() {
-        for(int i=0; i<wishList.length; i++){
-            System.out.println(wishList[i]);
-        }
         return wishList;
     }
 
@@ -129,6 +113,22 @@ public class Users {
     }
 
     public void setAccount(Integer account) {
-        this.account = account;
+        this.account += account;
+    }
+
+    public List<Products[]> getListOfwhishLists() {
+        return listOfWishLists;
+    }
+
+    public void setListOfwhishLists(List<Products[]> listOfwhishLists) {
+        this.listOfWishLists = listOfwhishLists;
+    }
+
+    public Integer getMoneyDonated() {
+        return moneyDonated;
+    }
+
+    public void setMoneyDonated(Integer moneyDonated) {
+        this.moneyDonated = moneyDonated;
     }
 }

@@ -19,6 +19,7 @@ public class Events {
         this.date = date;
     }
 
+
     public void addUser(Users user){ //POPULATE EVENT
         userList.add(user);
     }
