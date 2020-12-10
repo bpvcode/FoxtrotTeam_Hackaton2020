@@ -2,6 +2,8 @@ package org.aguilerasTeam.shout.services;
 
 
 import org.aguilerasTeam.shout.models.Events;
+import org.aguilerasTeam.shout.models.ONG;
+import org.aguilerasTeam.shout.models.Products;
 import org.aguilerasTeam.shout.models.Users;
 
 import java.util.Date;
@@ -13,10 +15,13 @@ public class EventsServices {
     private ONGServices ongServices;
     private Users currentUser;
     private UsersServices usersServices; //SETTAR NA MAIN
+    private List<ONG> ongList;
+    private List<Products> productsList;
 
     //private List<Events> eventsList = usersServices.getCurrentUser().getEventsList();
 
     public void creteNewEvent(String name, Integer maxvalue, String description, Date date){
+        //CRIAR CONDIÇÂO DE NOME NAO IGUAL (FOR EACH)
         Events event = new Events(name, maxvalue, description, date);
         event.getUserList().add(currentUser);
         //eventsList.add(event);
@@ -39,7 +44,7 @@ public class EventsServices {
     public void makePayment(Integer amount){
         if(amount <= currentUser.getAccount()) {
             currentUser.setAccount(-amount);
-            productsServices.
+            //productsServices.getProductsList();
         }
     }
 
@@ -74,5 +79,21 @@ public class EventsServices {
 
     public void setOngServices(ONGServices ongServices) {
         this.ongServices = ongServices;
+    }
+
+    public List<ONG> getOngList() {
+        return ongList;
+    }
+
+    public void setOngList(List<ONG> ongList) {
+        this.ongList = ongList;
+    }
+
+    public List<Products> getProductsList() {
+        return productsList;
+    }
+
+    public void setProductsList(List<Products> productsList) {
+        this.productsList = productsList;
     }
 }

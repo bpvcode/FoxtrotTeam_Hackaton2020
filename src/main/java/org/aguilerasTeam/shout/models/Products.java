@@ -3,15 +3,18 @@ package org.aguilerasTeam.shout.models;
 public class Products {
 
     private String name;
-    private Integer price;
+    private Integer totalPrice;
+    private Integer productPrice;
     private ONG ong;
-    private float donation;
+    private Integer donation;
+    private long reward;
 
-    public Products(String name, Integer price, ONG ong, float donation){
+    public Products(String name, Integer productPrice, ONG ong, Integer donation){
         this.name = name;
-        this.price = price;
+        this.productPrice = productPrice;
         this.ong = ong;
-        this.donation = donation;
+        this.donation = donation; //NEED CONDITION
+        totalPrice = productPrice + donation; // = MAX VALUE
     }
 
     public String getName() {
@@ -22,14 +25,6 @@ public class Products {
         this.name = name;
     }
 
-    public Integer getPrice() {
-        return price;
-    }
-
-    public void setPrice(Integer price) {
-        this.price = price;
-    }
-
     public ONG getOng() {
         return ong;
     }
@@ -38,11 +33,29 @@ public class Products {
         this.ong = ong;
     }
 
-    public float getDonation() {
+
+
+    public Integer getTotalPrice() {
+        return totalPrice;
+    }
+
+    public void setTotalPrice(Integer totalPrice) {
+        this.totalPrice = totalPrice;
+    }
+
+    public Integer getProductPrice() {
+        return productPrice;
+    }
+
+    public void setProductPrice(Integer productPrice) {
+        this.productPrice = productPrice;
+    }
+
+    public Integer getDonation() {
         return donation;
     }
 
-    public void setDonation(float donation) {
+    public void setDonation(Integer donation) {
         this.donation = donation;
     }
 }

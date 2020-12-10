@@ -80,23 +80,23 @@ public class Main {
 
         menuServices.distributeCurrentUser();
 
-        System.out.println(UsersServices.currentUser.getAccount());
+        System.out.println(usersServices.getCurrentUser().getAccount());
         usersServices.addMoney(50);
-        System.out.println(UsersServices.currentUser.getAccount());
+        System.out.println(usersServices.getCurrentUser().getAccount());
 
 
-        UsersServices.currentUser.getEventsList().add(new Events("OLA", 5,"hey",date));
+        usersServices.getCurrentUser().getEventsList().add(new Events("OLA", 5,"hey",date));
 
         EventsServices eventsServices = new EventsServices();
 
         System.out.println("====================================");
         System.out.println(date);
 
-        System.out.println("EVENTS LIST"+UsersServices.currentUser.getEventsList().size());
+        System.out.println("EVENTS LIST"+usersServices.getCurrentUser().getEventsList().size());
 
         eventsServices.creteNewEvent("BEBIANAS GONNA BEBIATE", 20, "Hackaton", date);
 
-        System.out.println("EVENTS LIST"+UsersServices.currentUser.getEventsList().size());
+        System.out.println("EVENTS LIST"+usersServices.getCurrentUser().getEventsList().size());
 
         Users user2 = new Users("nuriaFOfinha", "fofi", "Nuria", "Pinto", "nuria@gmail.com", 0);
 
@@ -106,7 +106,7 @@ public class Main {
 
         System.out.println("USER LIST"+eventsServices.getEventsList().get(1).getUserList().size());
 
-        System.out.println(UsersServices.currentUser.getEventsList().get(1).getName());
+        System.out.println(usersServices.getCurrentUser().getEventsList().get(1).getName());
 
         List<Users> usersList = eventsServices.getEventsList().get(1).getUserList();
 
