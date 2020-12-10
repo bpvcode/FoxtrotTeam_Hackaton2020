@@ -1,0 +1,46 @@
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
+}
+
+body{
+    background-color: #F3DBC3;
+}
+
+.give-a-wish{
+    width: 20%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    margin: 100px auto 0 auto;
+}
+
+.menuImage{
+    width: 10%;
+    height: auto;
+    margin: 30px auto 0 auto;
+    margin: 5px;
+}
+
+.menuImage:hover{
+    filter: blur(2px);
+}
+
+.signout{
+    border-radius: 999px;
+    font-family: sans-serif;
+    background-color:  #B28A76;
+    color: white;
+    border: none;
+    width: 200px;
+    padding: 10px 0;
+    margin: auto;
+    text-align: center;
+    text-decoration: none;
+}
+
+.signout:hover{
+    background-color:  #755b4d;
+}
