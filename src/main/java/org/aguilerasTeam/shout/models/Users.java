@@ -2,7 +2,9 @@ package org.aguilerasTeam.shout.models;
 
 
 import org.h2.engine.User;
+import org.springframework.beans.factory.annotation.Autowired;
 
+import javax.persistence.Entity;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -36,7 +38,7 @@ public class Users {
     public String getUsername() {
         return username;
     }
-
+    @Autowired
     public void setUsername(String username) {
         this.username = username;
     }
@@ -44,7 +46,7 @@ public class Users {
     public String getFirstName() {
         return firstName;
     }
-
+    @Autowired
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
@@ -52,7 +54,7 @@ public class Users {
     public String getLastName() {
         return lastName;
     }
-
+    @Autowired
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
@@ -61,7 +63,7 @@ public class Users {
     public String getEmail() {
         return email;
     }
-
+    @Autowired
     public void setEmail(String email) {
         this.email = email;
     }
@@ -82,7 +84,7 @@ public class Users {
     public String getPassword() {
         return password;
     }
-
+    @Autowired
     public void setPassword(String password) {
         this.password = password;
     }
@@ -90,7 +92,7 @@ public class Users {
     public List<Events> getEventsList() {
         return eventsList;
     }
-
+    @Autowired
     public void setEventsList(List<Events> eventsList) {
         this.eventsList = eventsList;
     }
@@ -106,7 +108,7 @@ public class Users {
     public Integer getMoneyDonated() {
         return moneyDonated;
     }
-
+    @Autowired
     public void setMoneyDonated(Integer moneyDonated) {
         this.moneyDonated = moneyDonated;
     }
@@ -114,7 +116,7 @@ public class Users {
     public List<WishList> getWishList() {
         return wishList;
     }
-
+    @Autowired
     public void setWishList(List<WishList> wishList) {
         this.wishList = wishList;
     }
@@ -122,7 +124,7 @@ public class Users {
     public Map<Users,Integer> getUsersList() {
         return usersList;
     }
-
+    @Autowired
     public void setUsersList(Map<Users,Integer> usersList) {
         this.usersList = usersList;
     }

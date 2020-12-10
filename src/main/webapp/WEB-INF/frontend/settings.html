@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/settings.css">
+    <style>
+        input:focus,
+        select:focus,
+        textarea:focus,
+        button:focus {
+            outline: none;
+        }
+
+        body{
+            background-color: #F3DBC3;
+        }
+
+        img{
+            height: 25px;
+            width: auto;
+        }
+
+        hr{
+            background-color: #B28A76;
+            height: 2px;
+            width: 150px;
+            border: none;
+            margin: 25px;
+        }
+
+        .titleIcon{
+            margin: 100px 50px 0 auto;
+        }
+
+        .title{
+            font-family: sans-serif;
+            font-size: xx-large;
+            color:  #B28A76;
+            margin-left: 10px;
+            display: inline-block;
+        }
+
+        .box{
+            border-radius: 999px;
+            color: white;
+            border: none;
+            height: 40px;
+            width: 200px;
+            display: flex;
+            flex-direction: column;
+            margin: 10px auto;
+            padding-left: 20px;
+        }
+
+        .decoration{
+            border-radius: 999px;
+            font-family: sans-serif;
+            background-color: #F3DBC3;
+            color: #B28A76;
+            border-color:  #B28A76;
+            border-style: solid;
+            border-width: 2px;
+            width: 200px;
+            padding: 10px 0;
+            text-align: left;
+            padding-left: 20px;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            margin: 10px auto;
+        }
+
+        .wallet{
+            border-radius: 999px;
+            font-family: sans-serif;
+            background-color:  #B28A76;
+            color: white;
+            border: none;
+            height: 40px;
+            width: 200px;
+            padding: 10px 0;
+            margin: 100px auto 10px auto;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .wallet:hover{
+            background-color:  #755b4d;
+        }
+
+        .back{
+            border-radius: 999px;
+            font-family: sans-serif;
+            background-color:  #B28A76;
+            color: white;
+            border: none;
+            height: 40px;
+            width: 200px;
+            padding: 10px 0;
+            margin: auto;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .back:hover{
+            background-color:  #755b4d;
+        }
+    </style>
+</head>
+
+<center>
+    <body>
+        <div class="titleIcon">
+            <img src="../images/username.png" alt="">
+            <p class="title">Settings</p>
+        </div>
+        <form action="formHandler.php" name="login" method="post">    
+            <input type="text" placeholder="Name" style="color: #B28A76;" class="box"></input>
+            <input type="text" placeholder="Surname" style="color: #B28A76;" class="box"></input>
+        </form>
+        <hr>
+        <input type="button" value="Balance" class="decoration">
+        <input type="button" value="Donated" class="decoration">
+        <a href=""><input type="button" value="Add to wallet" class="wallet"></a>
+        <br>
+        <a href="menu.html"><input type="button" value="Back" class="back"></a>
+    </body>
+</center>
+</html>

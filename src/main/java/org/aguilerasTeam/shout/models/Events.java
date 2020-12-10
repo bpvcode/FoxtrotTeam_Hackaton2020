@@ -1,5 +1,6 @@
 package org.aguilerasTeam.shout.models;
 
+import javax.persistence.Entity;
 import java.util.Date;
 import java.util.LinkedList;
 import java.util.List;

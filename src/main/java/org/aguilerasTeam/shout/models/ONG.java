@@ -1,5 +1,8 @@
 package org.aguilerasTeam.shout.models;
 
+import javax.persistence.Entity;
+
+
 public class ONG {
 
     private String name;

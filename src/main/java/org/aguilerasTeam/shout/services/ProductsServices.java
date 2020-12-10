@@ -1,10 +1,13 @@
 package org.aguilerasTeam.shout.services;
 
 import org.aguilerasTeam.shout.models.*;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.LinkedList;
 import java.util.List;
 
+@Service
 public class ProductsServices {
 
 
@@ -38,12 +41,12 @@ public class ProductsServices {
     public Users getCurrentUser() {
         return currentUser;
     }
-
+    //@Autowired
     public void setCurrentUser(Users currentUser) {
         this.currentUser = currentUser;
         eventsList = currentUser.getEventsList();
     }
-
+    //@Autowired
     public void setOngList(List<ONG> ongList) {
         this.ongList = ongList;
     }
@@ -55,7 +58,7 @@ public class ProductsServices {
     public List<Events> getEventsList() {
         return eventsList;
     }
-
+    //@Autowired
     public void setEventsList(List<Events> eventsList) {
         this.eventsList = eventsList;
     }

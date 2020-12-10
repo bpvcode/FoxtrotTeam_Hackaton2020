@@ -6,11 +6,14 @@ import org.aguilerasTeam.shout.models.ONG;
 import org.aguilerasTeam.shout.models.Products;
 import org.aguilerasTeam.shout.models.Users;
 import org.h2.engine.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import javax.persistence.criteria.CriteriaBuilder;
 import java.util.Date;
 import java.util.List;
 
+@Service
 public class EventsServices {
 
     private ONGServices ongServices;
@@ -75,6 +78,7 @@ public class EventsServices {
         return currentUser;
     }
 
+    //@Autowired
     public void setCurrentUser(Users currentUser) {
         this.currentUser = currentUser;
         eventsList = currentUser.getEventsList();
@@ -84,14 +88,17 @@ public class EventsServices {
         return ongServices;
     }
 
-    public void setOngServices(ONGServices ongServices) {
+    /*public void setOngServices(ONGServices ongServices) {
         this.ongServices = ongServices;
     }
+
+     */
 
     public List<ONG> getOngList() {
         return ongList;
     }
 
+    //@Autowired
     public void setOngList(List<ONG> ongList) {
         this.ongList = ongList;
     }
@@ -99,7 +106,7 @@ public class EventsServices {
     public List<Products> getProductsList() {
         return productsList;
     }
-
+    /*
     public void setProductsList(List<Products> productsList) {
         this.productsList = productsList;
     }
@@ -107,4 +114,6 @@ public class EventsServices {
     public void setEventsList(List<Events> eventsList) {
         this.eventsList = eventsList;
     }
+
+ */
 }
