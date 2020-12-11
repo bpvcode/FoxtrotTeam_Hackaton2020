@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="css/menu.css">
+
+    <style>
+        input:focus,
+        select:focus,
+        textarea:focus,
+        button:focus {
+            outline: none;
+        }
+
+        body{
+            background-color: #F3DBC3;
+        }
+
+        .give-a-wish{
+            width: 20%;
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            margin: 100px auto 0 auto;
+        }
+
+        .menuImage{
+            width: 10%;
+            height: auto;
+            margin: 30px auto 0 auto;
+            margin: 5px;
+        }
+
+        .menuImage:hover{
+            filter: blur(2px);
+        }
+
+        .signout{
+            border-radius: 999px;
+            font-family: sans-serif;
+            background-color:  #B28A76;
+            color: white;
+            border: none;
+            width: 200px;
+            padding: 10px 0;
+            margin: auto;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .signout:hover{
+            background-color:  #755b4d;
+        }
+    </style>
+</head>
+
+<center>
+    <body>
+        <div class="centering">
+        <img src="images/title.png" alt="title" class="give-a-wish">
+        <div>
+            <a href="newEvent"><img src="images/newEvent.png" alt="title" class="menuImage"></a>
+            <a href="wishlists"><img src="images/wishList.png" alt="title" class="menuImage"></a>
+        </div>
+        <div>
+            <a href="events1"><img src="images/events.png" alt="title" class="menuImage"></a>
+            <a href="ngo"><img src="images/ngo.png" alt="title" class="menuImage"></a>
+        </div>
+        <a href="settings"><img src="images/settings.png" alt="title" class="menuImage"></a>
+        <p></p>
+        <a href="login.html"><input type="button" value="Sign Out" class="signout"></a>
+        </div>
+    </body>
+</center>
+</html>

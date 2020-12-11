@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANDerdogs Event</title>
+    <link rel="stylesheet" href="css/anderdogs.css">
+
+    <style>
+        input:focus,
+        select:focus,
+        textarea:focus,
+        button:focus {
+            outline: none;
+        }
+
+        body{
+            background-color: #F3DBC3;
+            font-family: sans-serif;
+        }
+
+        img{
+            height: 20px;
+            width: auto;
+        }
+
+        hr{
+            background-color: #B28A76;
+            height: 2px;
+            width: 150px;
+            border: none;
+            margin: 25px;
+        }
+
+        .title {
+            font-family: sans-serif;
+            font-size: xx-large;
+            color: #b28a76;
+            margin-left: 10px;
+            display: inline-block;
+        }
+
+        .text{
+            font-family: sans-serif;
+            font-size: medium;
+            color:  #B28A76;
+            /*margin-right: 100px;
+            padding-left: 75px;*/
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .wishItem{
+            border-radius: 20px;
+            font-family: sans-serif;
+            background-color:  white;
+            color: #B28A76;
+            border: none;
+            width: 100px;
+            padding: 10px;
+            margin: 10px auto;
+            display: inline-block;
+        }
+
+        .image{
+            height: 100px;
+            width: auto;
+        }
+
+        .box{
+            border-radius: 999px;
+            color: white;
+            border: none;
+            height: 40px;
+            width: 200px;
+            display: flex;
+            flex-direction: column;
+            margin: 10px auto;
+            padding-left: 20px;
+        }
+
+        .box2{
+            border-radius: 999px;
+            color: white;
+            border: none;
+            height: 40px;
+            width: 150px;
+            margin: 0 auto 10px auto;
+            padding-left: 20px;
+        }
+
+        .add{
+            border-radius: 999px;
+            font-family: sans-serif;
+            background-color:  #B28A76;
+            color: white;
+            border: none;
+            height: 40px;
+            width: 40px;
+            text-align: center;
+            text-decoration: none;
+            margin: 10px auto;
+        }
+
+        .add:hover{
+            background-color:  #755b4d;
+        }
+
+        .decoration {
+            border-radius: 999px;
+            font-family: sans-serif;
+            background-color:  white;
+            color: #B28A76;
+            border: none;
+            height: 40px;
+            width: 220px;
+            padding: 10px 0;
+            text-align: left;
+            padding-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        .create{
+            border-radius: 999px;
+            font-family: sans-serif;
+            background-color:  #B28A76;
+            color: white;
+            border: none;
+            height: 40px;
+            width: 200px;
+            padding: 10px 0;
+            margin: 100px auto 10px auto;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .create:hover{
+            background-color:  #755b4d;
+        }
+
+        .back{
+            border-radius: 999px;
+            font-family: sans-serif;
+            background-color:  #B28A76;
+            color: white;
+            border: none;
+            height: 40px;
+            width: 220px;
+            padding: 10px 0;
+            margin: auto;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .back:hover{
+            background-color:  #755b4d;
+        }
+    </style>
+
+</head>
+
+<center>
+    <body>
+    <div class="titleIcon">
+        <img src="images/newEventIcon.png" alt="">
+        <p class="title">ANDerdogs</p>
+    </div>
+
+        <input type="text" placeholder="ANDerdogs" style="color: #B28A76;" class="box"/>
+        <input type="number" placeholder="10" style="color: #B28A76;" class="box"/>
+        <input type="text" placeholder="Festa de natal" style="color: #B28A76;" class="box"/>
+        <p class="text">Bruno's Wishlist</p>
+        <div class="wishItem">
+            <div>
+                <img src="images/book.png" alt="" class="image">
+                <p class="texttwo">Item: Book 1</p>
+                <p class="texttwo">Price: 15.00€</p>
+                <p class="texttwo">Donation: 1€</p>
+            </div>
+        </div>
+        <div class="wishItem">
+            <div>
+                <img src="images/book.png" alt="" class="image">
+                <p class="texttwo">Item: Book 4</p>
+                <p class="texttwo">Price: 15.00€</p>
+                <p class="texttwo">Donation: 1€</p>
+            </div>
+        </div>
+        <div class="wishItem">
+            <div>
+                <img src="images/book.png" alt="" class="image">
+                <p class="texttwo">Item: Book 5</p>
+                <p class="texttwo">Price: 15.00€</p>
+                <p class="texttwo">Donation: 1€</p>
+            </div>
+        </div>
+        <p class="text">Participants</p>
+        <a href=""><input type="button" value="👤 Bruno" class="decoration"></a>
+        <br>
+        <a href=""><input type="button" value="👤 Bebiana" class="decoration"></a>
+        <br>
+        <a href="menu.html"><input type="button" value="Back" class="back"></a>
+
+    </body>
+</center>
+</html>

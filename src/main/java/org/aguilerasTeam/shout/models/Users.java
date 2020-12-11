@@ -35,6 +35,8 @@ public class Users {
 
     }
 
+    public Users(){}
+
     public String getUsername() {
         return username;
     }

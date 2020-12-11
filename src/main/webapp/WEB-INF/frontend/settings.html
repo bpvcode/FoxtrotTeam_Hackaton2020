@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Settings</title>
     <link rel="stylesheet" href="css/settings.css">
     <style>
         input:focus,
@@ -52,6 +52,7 @@
             flex-direction: column;
             margin: 10px auto;
             padding-left: 20px;
+            padding-right: 20px;
         }
 
         .decoration{
@@ -114,19 +115,19 @@
 <center>
     <body>
         <div class="titleIcon">
-            <img src="../images/username.png" alt="">
+            <img src="images/username.png" alt="">
             <p class="title">Settings</p>
         </div>
         <form action="formHandler.php" name="login" method="post">    
-            <input type="text" placeholder="Name" style="color: #B28A76;" class="box"></input>
-            <input type="text" placeholder="Surname" style="color: #B28A76;" class="box"></input>
+            <input type="text" placeholder="Bebiana" style="color: #B28A76;" class="box"/>
+            <input type="text" placeholder="bebiana@hotmail.com" style="color: #B28A76;" class="box"/>
         </form>
         <hr>
-        <input type="button" value="Balance" class="decoration">
-        <input type="button" value="Donated" class="decoration">
+        <input type="button" value="Wallet: 50€" class="decoration">
+        <input type="button" value="Total Donated: 100€" class="decoration">
         <a href=""><input type="button" value="Add to wallet" class="wallet"></a>
         <br>
-        <a href="menu.html"><input type="button" value="Back" class="back"></a>
+        <a href="menu2"><input type="button" value="Back" class="back"></a>
     </body>
 </center>
 </html>

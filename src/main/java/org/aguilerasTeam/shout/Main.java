@@ -1,16 +1,11 @@
 package org.aguilerasTeam.shout;
 
-import org.aguilerasTeam.shout.models.Events;
 import org.aguilerasTeam.shout.models.ONG;
 import org.aguilerasTeam.shout.models.Products;
 import org.aguilerasTeam.shout.models.Users;
 import org.aguilerasTeam.shout.services.*;
-import org.h2.engine.User;
 
 import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 
 public class Main {
@@ -116,7 +111,7 @@ public class Main {
              ) {
             System.out.println(user.getFirstName());
         }*/
-        Date date = new Date();
+        /*Date date = new Date();
         Users user1 = new Users("bpvcode", "xxx", "Bruno", "Vilar", "bruno@gmail.com", 100);
         Users user2 = new Users("nuriaFOfinha", "fofi", "Nuria", "Pinto", "nuria@gmail.com", 0);
         Users user3 = new Users("asdggasd", "fasdgfi", "adfg", "Piadfg", "nfdga@gmail.com", 555);
@@ -138,7 +133,7 @@ public class Main {
         authServices.registUser(user2);
         authServices.registUser(user3);
         authServices.authenticateUser("bpvcode","xxx");
-        menuServices.distributeCurrentUser();
+        menuServices.distributeCurrentUser(user);
 
         eventsServices.createNewEvent("BEBIANAS GONNA BEBIATE", 20, "Hackaton", date, 0);
         eventsServices.addUser("BEBIANAS GONNA BEBIATE",user2);
@@ -163,6 +158,8 @@ public class Main {
         System.out.println(user2.getEventsList());
         System.out.println(user1.getUsersList());
         System.out.println(user1.getEventsList());
+
+         */
 
     }
 }

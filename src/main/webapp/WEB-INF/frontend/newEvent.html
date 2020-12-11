@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>New Event</title>
     <link rel="stylesheet" href="css/newEvent.css">
 
     <style>
@@ -38,6 +38,7 @@
         color: #b28a76;
         margin-left: 10px;
         display: inline-block;
+        margin-top: 100px;
         }
 
         .box{
@@ -57,9 +58,10 @@
         color: white;
         border: none;
         height: 40px;
-        width: 150px;
+        width: 130px;
         margin: 0 auto 10px auto;
         padding-left: 20px;
+        padding-right: 20px;
         }
 
         .add{
@@ -134,23 +136,22 @@
 <center>
     <body>
         <div class="titleIcon">
-            <img src="../images/newEventIcon.png" alt="">
+            <img src="images/newEventIcon.png" alt="">
             <p class="title">New Event</p>
         </div>
-        <form action="formHandler.php" name="login" method="post">    
-            <input type="text" placeholder="Event Title" style="color: #B28A76;" class="box"></input>
-            <input type="number" placeholder="Max Value" style="color: #B28A76;" class="box"></input>
-            <input type="text" placeholder="Description" style="color: #B28A76;" class="box"></input>
+
+            <input type="text" placeholder="Event Title" style="color: #B28A76;" class="box"/>
+            <input type="number" placeholder="Max Value" style="color: #B28A76;" class="box"/>
+            <input type="text" placeholder="Description" style="color: #B28A76;" class="box"/>
             <hr>
-            <input type="text" placeholder="Email" style="color: #B28A76;" class="box2"></input>
-            <a href=""><input type="submit" value="+" class="add"></a>
+            <input type="text" placeholder="Email" style="color: #B28A76;" class="box2"/>
+            <a href="newEvent1"><input type="submit" value="+" class="add"></a>
             <br>
-            <a href=""><input type="button" value="👤 Bruno Villar" class="decoration"></a>            
             <br>
             <a href=""><input type="submit" value="Create" class="create"></a>
             <br>
             <a href="menu.html"><input type="button" value="Back" class="back"></a>
-        </form>
+
 
     </body>
 </center>
