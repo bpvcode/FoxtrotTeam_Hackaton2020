@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/newEvent.css">
+
+    <style>
+        input:focus,
+        select:focus,
+        textarea:focus,
+        button:focus {
+        outline: none;
+        }
+
+        body{
+        background-color: #F3DBC3;
+        font-family: sans-serif;
+        }
+
+        img{
+        height: 20px;
+        width: auto;
+        }
+
+        hr{
+        background-color: #B28A76;
+        height: 2px;
+        width: 150px;
+        border: none;
+        margin: 25px;
+        }
+
+        .title {
+        font-family: sans-serif;
+        font-size: xx-large;
+        color: #b28a76;
+        margin-left: 10px;
+        display: inline-block;
+        }
+
+        .box{
+        border-radius: 999px;
+        color: white;
+        border: none;
+        height: 40px;
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+        margin: 10px auto;
+        padding-left: 20px;
+        }
+
+        .box2{
+        border-radius: 999px;
+        color: white;
+        border: none;
+        height: 40px;
+        width: 150px;
+        margin: 0 auto 10px auto;
+        padding-left: 20px;
+        }
+
+        .add{
+        border-radius: 999px;
+        font-family: sans-serif;
+        background-color:  #B28A76;
+        color: white;
+        border: none;
+        height: 40px;
+        width: 40px;
+        text-align: center;
+        text-decoration: none;
+        margin: 10px auto;
+        }
+
+        .add:hover{
+        background-color:  #755b4d;
+        }
+
+        .decoration {
+        border-radius: 999px;
+        font-family: sans-serif;
+        background-color:  white;
+        color: #B28A76;
+        border: none;
+        height: 40px;
+        width: 220px;
+        padding: 10px 0;
+        text-align: left;
+        padding-left: 20px;
+        }
+
+        .create{
+        border-radius: 999px;
+        font-family: sans-serif;
+        background-color:  #B28A76;
+        color: white;
+        border: none;
+        height: 40px;
+        width: 200px;
+        padding: 10px 0;
+        margin: 100px auto 10px auto;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        }
+
+        .create:hover{
+        background-color:  #755b4d;
+        }
+
+        .back{
+        border-radius: 999px;
+        font-family: sans-serif;
+        background-color:  #B28A76;
+        color: white;
+        border: none;
+        height: 40px;
+        width: 200px;
+        padding: 10px 0;
+        margin: auto;
+        text-align: center;
+        text-decoration: none;
+        }
+
+        .back:hover{
+        background-color:  #755b4d;
+        }
+    </style>
+</head>
+
+<center>
+    <body>
+        <div class="titleIcon">
+            <img src="../images/newEventIcon.png" alt="">
+            <p class="title">New Event</p>
+        </div>
+        <form action="formHandler.php" name="login" method="post">    
+            <input type="text" placeholder="Event Title" style="color: #B28A76;" class="box"></input>
+            <input type="number" placeholder="Max Value" style="color: #B28A76;" class="box"></input>
+            <input type="text" placeholder="Description" style="color: #B28A76;" class="box"></input>
+            <hr>
+            <input type="text" placeholder="Email" style="color: #B28A76;" class="box2"></input>
+            <a href=""><input type="submit" value="+" class="add"></a>
+            <br>
+            <a href=""><input type="button" value="👤 Bruno Villar" class="decoration"></a>            
+            <br>
+            <a href=""><input type="submit" value="Create" class="create"></a>
+            <br>
+            <a href="menu.html"><input type="button" value="Back" class="back"></a>
+        </form>
+
+    </body>
+</center>
+</html>
